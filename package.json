@@ -1,0 +1,15 @@
+{
+  "name": "shopee_cart",
+  "version": "1.0.0",
+  "description": "just a shopee cart",
+  "keywords": [
+    "module"
+  ],
+  "license": "ISC",
+  "author": "guilherme paiter",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js"
+  }
+}
