@@ -1,4 +1,6 @@
-//funções para o carrinho
+// cart.js (Corrigido)
+
+// ⬅️ Remova o 'import createItem from "./itens.js"' - Não é necessário aqui!
 
 //CASOS DE USO
 //✔ Add item ao carrinho
@@ -22,7 +24,10 @@ async function removeItem(userCart, index) {
 
 //Calculate total do carrinho
 async function calculateTotal(userCart) {
-    const result = userCart.reduce((total, item) => total + item.subtotal())
+    // ⬅️ CORREÇÃO: Use 'item.subtotal()', não 'createItem.subtotal()'
+    // 💡 Também adicionei ', 0' como valor inicial do reduce.
+    // Isso garante que funcione mesmo se o carrinho estiver vazio.
+    const result = userCart.reduce((total, item) => total + item.subtotal(), 0)
     console.log(result);
 }
 

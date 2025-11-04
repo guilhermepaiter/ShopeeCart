@@ -1,7 +1,7 @@
 //CASOS DED USO DOS ITENS
 
 // Create item
-async function createItem(name, price, quantity) {
+export async function createItem(name, price, quantity) {
  return {
     name,
     price,
@@ -9,5 +9,3 @@ async function createItem(name, price, quantity) {
     subtotal: () => price * quantity,
  }
 }
-
-export default { createItem }
