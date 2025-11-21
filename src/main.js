@@ -15,6 +15,9 @@ async function runCart() { // ⬅️ Função Async para usar o 'await'
     //add 2 itens no carrinho
     await cartService.addItem(myCart, item1)
     await cartService.addItem(myCart, item2)
+
+    await cartService.removeItem(myCart, item1)
+
     await cartService.displaycart(myCart)
 
     //delete 1 item do carrinho
