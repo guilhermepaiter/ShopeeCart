@@ -22,18 +22,27 @@ async function removeItem(userCart, index) {
 
 }
 
+async function displaycart(usercart) {
+    console.log("\nShopee cart list:")
+    usercart.forEach((item, index) => {
+        console.log(`${index + 1}. ${item.name} - R$ ${item.price} | ${item.quantity}x | Subtotal: = ${item.subtotal()}`);
+    })
+}
+
 //Calculate total do carrinho
 async function calculateTotal(userCart) {
     // ⬅️ CORREÇÃO: Use 'item.subtotal()', não 'createItem.subtotal()'
     // 💡 Também adicionei ', 0' como valor inicial do reduce.
     // Isso garante que funcione mesmo se o carrinho estiver vazio.
+    console.log("\nYour Total Cart is:")
     const result = userCart.reduce((total, item) => total + item.subtotal(), 0)
-    console.log(result);
+    console.log(`📦Total: R$ ${result.toFixed(2)}`);
 }
 
 export {
     addItem,
     calculateTotal,
     deleteItem,
-    removeItem
+    removeItem,
+    displaycart
 }
